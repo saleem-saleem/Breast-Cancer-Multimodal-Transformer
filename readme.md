@@ -18,13 +18,23 @@ A unified deep learning framework integrating clinical, genomic, and lifestyle d
 - **Python 3.7 or higher**
 - **Required libraries**: numpy pandas scikit-learn matplotlib scipy fuzzy / skfuzzy tensorflow / keras joblib, matplotlib, seaborn, optuna,shap, captum
 - **Deep Learning Framework**: PyTorch 2.0+ (or TensorFlow equivalent if adapted)
-- **Hardware Requirements:** GPU-enabled system (e.g., NVIDIA RTX 3090/4090 or equivalent)
-
-Minimum 16 GB RAM (recommended: 32 GB+)
+- **Hardware Requirements:** GPU-enabled system (e.g., NVIDIA RTX 3090/4090 or equivalent). Minimum 16 GB RAM (recommended: 32 GB+)
 
 ## Evaluation Metrics
-<p>The performance of the student performance prediction models is evaluated using standard classification metrics derived from the confusion matrix:</p>
+- **Classification Metrics**
+  Accuracy (%) – Measures overall correctness of recurrence type prediction.
+  Precision (%) – Indicates reliability of positive predictions (reduces false positives).
+  Recall (%) – Measures the model’s ability to detect true recurrence cases (reduces false negatives).
+  F1-Score (%) – Harmonic mean of precision and recall for balanced evaluation.
+  AUC-ROC – Evaluates class separability across recurrence risk categories.
 
+- **Survival Analysis Metrics**
+  C-Index (Concordance Index) – Quantifies how well predicted survival times align with actual outcomes.
+  Kaplan–Meier (KM) Curves – Visualize survival probability over time for risk groups.
+  Log-Rank Test (p-value) – Tests statistical significance between high- and low-risk survival groups.
+  Brier Score – Measures calibration accuracy of predicted survival probabilities.
+
+Time-Dependent AUC (10-year AUC) – Evaluates discrimination of survival predictions over a fixed horizon.
 - **True Positives (TP):** Number of students correctly predicted as “passed".
 - **True Negatives (TN):** Number of students correctly predicted as “failed.”
 - **False Positives (FP):** Number of students incorrectly predicted as “passed.”

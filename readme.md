@@ -34,73 +34,75 @@ A unified deep learning framework integrating clinical, genomic, and lifestyle d
   Log-Rank Test (p-value) – Tests statistical significance between high- and low-risk survival groups.
   Brier Score – Measures calibration accuracy of predicted survival probabilities.Time-Dependent AUC (10-year AUC).
 
-  
-- **True Positives (TP):** Number of students correctly predicted as “passed".
-- **True Negatives (TN):** Number of students correctly predicted as “failed.”
-- **False Positives (FP):** Number of students incorrectly predicted as “passed.”
-- **False Negatives (FN):** Number of students incorrectly predicted as “failed.”
-
 ## How to Run
-<p>Step 1: Set Up the Environment
-Install Python:
-Make sure Python 3.7 or higher is installed on your system.
-Install Required Libraries:
-Open a terminal or command prompt and run:
-pip install numpy pandas scikit-learn matplotlib seaborn scipy scikit-fuzzy tensorflow
-(Ensure all required libraries listed in requirements.txt are installed.)</p>
+1. Clone the Repository
+git clone https://github.com/<your-username>/breast-cancer-multimodal-transformer.git  
+cd breast-cancer-multimodal-transformer
 
-<p>Step 2: Prepare the Dataset
-Use a Dataset:
-The dataset should be in CSV format.
-Include features (input columns) and labels (target column).
-Preprocess Your Dataset:
-Ensure there are no missing values.
-Encode categorical variables if needed (e.g., one-hot encoding).
-Normalize or scale numeric features for consistency.
-Place your dataset in the /data folder for convenience.</p>
+2. Set Up a Python Environment
+Create and activate a new environment (recommended):
+python -m venv venv
+source venv/bin/activate      # On Windows: venv\Scripts\activate
 
+3. Install Dependencies
+Install all required libraries:
+pip install -r requirements.txt
 
-<p>Step 3: Execute the Code
-Run Feature Selection smartfs:
-python smartFS.py
-Run SmartHIVE:
-python smartHIVE.py
-Train and Evaluate Classifiers :
-python evaluate.py
-Output:
-Iteration details during feature selection.
-Selected features for each iteration.
-Performance metrics: Accuracy, TPR, TNR, Confusion Matrix.
-Optimal feature subset indices for downstream analysis.</p>
+4️. Download Datasets
+Download and organize datasets used in the study:
+METABRIC Dataset
+GSE2034
+GSE2990
+BCSC
+Breast Cancer Coimbra Dataset
 
-<p>Step 4: Modify Parameters (Optional)
-Adjust Parameters:
-Open the relevant Python script  in a text editor.
+5️. Preprocess Data
+Run preprocessing to clean, normalize, and prepare datasets:
+python scripts/preprocess_data.py
+This step handles:
+Missing value imputation
+Normalization (Z-score scaling)
+Feature encoding
+Autoencoder-based dimensionality reduction
 
-Modify parameters to fit your dataset, for example:
-max_iterations = 10        # Number of iterations
-initial_threshold = 0.5    # Threshold for feature selection
+6️. Train the Model
+Train the unified multi-modal Transformer:
+python train_model.py
+This script:
+Loads preprocessed data
+Trains autoencoders and Transformer encoder
+Optimizes classification, survival, reconstruction, and contrastive losses
+Saves the best model under /models/checkpoints/
+Training parameters can be adjusted in config.yaml (batch size, epochs, learning rate, etc.).
 
-Use Your Dataset:
-Replace any synthetic dataset code with:
+7️. Evaluate the Model
+After training, evaluate performance on the test sets:
+python evaluate_model.py
+Outputs include:
+Accuracy, Precision, Recall, F1-score
+C-index, Kaplan–Meier curves, Log-Rank test
+SHAP explainability plots
 
-import pandas as pd
+8️. Visualize and Interpret Results
+Generate interpretability and visualization plots:
+python visualize_results.py
+This script creates:
+SHAP-based feature importance charts
+Kaplan–Meier survival plots
+Training vs. validation accuracy/loss graphs
 
-data = pd.read_csv("data/your_dataset.csv")
+9️. Predict New Patient Data
+To predict recurrence risk and survival probability for a new patient:
+python predict_patient.py --input patient_data.csv
+Output includes predicted recurrence category, log-risk score, and survival probability.
 
-X = data.iloc[:, :-1].values  # Features
+10️. Optional: Hyperparameter Optimization
+To optimize model parameters:
+python tune_hyperparameters.py
+Uses Optuna for cross-validation tuning across multiple datasets.
 
-y = data.iloc[:, -1].values   # Labels
-
-Rerun the Script:
-python feature_selection.py</p>
-
-<p>Step 5: Analyze Results
-Optimal Features:
-The scripts output indices of selected features.
-Use these indices to extract the most relevant features from your dataset.
-Performance Metrics:
-Check console output for Accuracy, True Positive Rate (TPR), True Negative Rate (TNR), and Confusion Matrix.
-Optional: Calculate F1-score, Precision, or Recall if needed.
-Optional Enhancements:
-Save results to a file: .csv or .txt for reporting.</p>
+Outputs Generated
+results/metrics.csv — summary of all performance metrics
+results/plots/ — accuracy/loss and survival graphs
+models/best_model.pt — saved Transformer model
+logs/training.log — training progress and loss details

@@ -1,12 +1,12 @@
-# EduFeatOpt
-A hybrid feature selection framework combining SmartFS (filter-based) and SmartHive (ACO–GA wrapper-based) for student performance prediction. Enhances accuracy and reduces redundancy using UCI and real educational datasets validated with SVM, KNN, and BPNN classifiers.
+# Breast-Cancer-Multimodal-Transformer
+A unified deep learning framework integrating clinical, genomic, and lifestyle data using denoising autoencoders, attention-based fusion, and a Transformer backbone for joint breast cancer recurrence classification and survival prediction, achieving high accuracy, interpretability, and robust cross-dataset generalization.
 ## Key Features
-- **Hybrid Feature Selection Framework**: Integrates filter (SmartFS) and wrapper (SmartHive) methods for optimal feature subset selection. 
-- **Dual Optimization Mechanism**: Combines Ant Colony Optimization (ACO) for global search and Genetic Algorithm (GA) for local refinement.  
-- **SmartFS Module**: Uses modified Chi-Square (MChi), ReliefF (MRel), and CFS to ensure relevance and minimize redundancy.
-- **SmartHive Module**: Employs ACO–GA optimization with SVM classifier feedback for high-accuracy feature refinement.
-- **Real-World Educational Application**: Enables early identification of at-risk students.
-Supports data-driven educational interventions and decision-making.
+- **Unified Framework:**: Performs both recurrence classification and survival prediction in a single model. 
+- **Multi-Modal Fusion**: Integrates clinical, genomic, and lifestyle data.  
+- **Autoencoder Compression**: Reduces noise and dimensionality while preserving discriminative information.
+- **Attention Mechanism**: Learns patient-specific modality importance for improved interpretability.
+- **Contrastive Learning**: Enhances representation separability across recurrence types.
+
 
 
 ## Applications

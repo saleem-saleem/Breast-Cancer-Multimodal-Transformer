@@ -21,20 +21,20 @@ A unified deep learning framework integrating clinical, genomic, and lifestyle d
 - **Hardware Requirements:** GPU-enabled system (e.g., NVIDIA RTX 3090/4090 or equivalent). Minimum 16 GB RAM (recommended: 32 GB+)
 
 ## Evaluation Metrics
-- **Classification Metrics**
+- **Classification Metrics**: 
   Accuracy (%) – Measures overall correctness of recurrence type prediction.
   Precision (%) – Indicates reliability of positive predictions (reduces false positives).
   Recall (%) – Measures the model’s ability to detect true recurrence cases (reduces false negatives).
   F1-Score (%) – Harmonic mean of precision and recall for balanced evaluation.
   AUC-ROC – Evaluates class separability across recurrence risk categories.
 
-- **Survival Analysis Metrics**
+- **Survival Analysis Metrics**: 
   C-Index (Concordance Index) – Quantifies how well predicted survival times align with actual outcomes.
   Kaplan–Meier (KM) Curves – Visualize survival probability over time for risk groups.
   Log-Rank Test (p-value) – Tests statistical significance between high- and low-risk survival groups.
-  Brier Score – Measures calibration accuracy of predicted survival probabilities.
+  Brier Score – Measures calibration accuracy of predicted survival probabilities.Time-Dependent AUC (10-year AUC).
 
-Time-Dependent AUC (10-year AUC) – Evaluates discrimination of survival predictions over a fixed horizon.
+  
 - **True Positives (TP):** Number of students correctly predicted as “passed".
 - **True Negatives (TN):** Number of students correctly predicted as “failed.”
 - **False Positives (FP):** Number of students incorrectly predicted as “passed.”

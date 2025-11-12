@@ -7,8 +7,6 @@ A unified deep learning framework integrating clinical, genomic, and lifestyle d
 - **Attention Mechanism**: Learns patient-specific modality importance for improved interpretability.
 - **Contrastive Learning**: Enhances representation separability across recurrence types.
 
-
-
 ## Applications
 - **Clinical Decision Support:**
 - **Precision Oncology**
@@ -20,7 +18,9 @@ A unified deep learning framework integrating clinical, genomic, and lifestyle d
 - **Python 3.7 or higher**
 - **Required libraries**: numpy pandas scikit-learn matplotlib scipy fuzzy / skfuzzy tensorflow / keras joblib, matplotlib, seaborn, optuna,shap, captum
 - **Deep Learning Framework**: PyTorch 2.0+ (or TensorFlow equivalent if adapted)
-- ****
+- **Hardware Requirements:** GPU-enabled system (e.g., NVIDIA RTX 3090/4090 or equivalent)
+
+Minimum 16 GB RAM (recommended: 32 GB+)
 
 ## Evaluation Metrics
 <p>The performance of the student performance prediction models is evaluated using standard classification metrics derived from the confusion matrix:</p>

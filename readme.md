@@ -10,11 +10,11 @@ A unified deep learning framework integrating clinical, genomic, and lifestyle d
 
 
 ## Applications
-- **Early Identification of At-Risk Students**
-- **Personalized Learning and Adaptive Education**
-- **Data-Driven Educational Interventions**
-- **Enhanced Decision-Making for Institutions**
-- **Academic Policy and Resource Planning**
+- **Clinical Decision Support:**
+- **Precision Oncology**
+- **AI-Driven Prognostics**
+- **Healthcare Research**
+- **Survival Analysis**
 
 ## Prerequisites 
 - **Python 3.7 or higher**

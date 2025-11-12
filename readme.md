@@ -48,7 +48,7 @@ source venv/bin/activate      # On Windows: venv\Scripts\activate
 Install all required libraries:
 pip install -r requirements.txt
 
-4️. Download Datasets
+4. Download Datasets
 Download and organize datasets used in the study:
 METABRIC Dataset
 GSE2034
@@ -56,7 +56,7 @@ GSE2990
 BCSC
 Breast Cancer Coimbra Dataset
 
-5️. Preprocess Data
+5. Preprocess Data
 Run preprocessing to clean, normalize, and prepare datasets:
 python scripts/preprocess_data.py
 This step handles:
@@ -65,7 +65,7 @@ Normalization (Z-score scaling)
 Feature encoding
 Autoencoder-based dimensionality reduction
 
-6️. Train the Model
+6. Train the Model
 Train the unified multi-modal Transformer:
 python train_model.py
 This script:
@@ -75,7 +75,7 @@ Optimizes classification, survival, reconstruction, and contrastive losses
 Saves the best model under /models/checkpoints/
 Training parameters can be adjusted in config.yaml (batch size, epochs, learning rate, etc.).
 
-7️. Evaluate the Model
+7. Evaluate the Model
 After training, evaluate performance on the test sets:
 python evaluate_model.py
 Outputs include:
@@ -83,7 +83,7 @@ Accuracy, Precision, Recall, F1-score
 C-index, Kaplan–Meier curves, Log-Rank test
 SHAP explainability plots
 
-8️. Visualize and Interpret Results
+8. Visualize and Interpret Results
 Generate interpretability and visualization plots:
 python visualize_results.py
 This script creates:
@@ -91,12 +91,12 @@ SHAP-based feature importance charts
 Kaplan–Meier survival plots
 Training vs. validation accuracy/loss graphs
 
-9️. Predict New Patient Data
+9. Predict New Patient Data
 To predict recurrence risk and survival probability for a new patient:
 python predict_patient.py --input patient_data.csv
 Output includes predicted recurrence category, log-risk score, and survival probability.
 
-10️. Optional: Hyperparameter Optimization
+10. Optional: Hyperparameter Optimization
 To optimize model parameters:
 python tune_hyperparameters.py
 Uses Optuna for cross-validation tuning across multiple datasets.

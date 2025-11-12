@@ -18,7 +18,9 @@ A unified deep learning framework integrating clinical, genomic, and lifestyle d
 
 ## Prerequisites 
 - **Python 3.7 or higher**
-- **Required libraries**: numpy pandas scikit-learn matplotlib scipy fuzzy / skfuzzy tensorflow / keras joblib 
+- **Required libraries**: numpy pandas scikit-learn matplotlib scipy fuzzy / skfuzzy tensorflow / keras joblib, matplotlib, seaborn, optuna,shap, captum
+- **Deep Learning Framework**: PyTorch 2.0+ (or TensorFlow equivalent if adapted)
+- ****
 
 ## Evaluation Metrics
 <p>The performance of the student performance prediction models is evaluated using standard classification metrics derived from the confusion matrix:</p>

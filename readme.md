@@ -102,7 +102,7 @@ python tune_hyperparameters.py
 Uses Optuna for cross-validation tuning across multiple datasets.
 
 Outputs Generated
-results/metrics.csv — summary of all performance metrics
-results/plots/ — accuracy/loss and survival graphs
-models/best_model.pt — saved Transformer model
-logs/training.log — training progress and loss details
+  results/metrics.csv — summary of all performance metrics. 
+  results/plots/ — accuracy/loss and survival graphs. 
+  models/best_model.pt — saved Transformer model.
+  logs/training.log — training progress and loss details. 
